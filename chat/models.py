@@ -19,7 +19,7 @@ class Job(models.Model):
 
 class Dialog(models.Model):
     answer = models.CharField(max_length=1000, blank=True, null=True)
-    job = models.ForeignKey(Job)
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)
     question = models.CharField(max_length=10000, blank=True, null=True)
     created_at = models.DateTimeField("Time", null=True, auto_now_add=True)
 
